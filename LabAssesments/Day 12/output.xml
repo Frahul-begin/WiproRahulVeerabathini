@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-02-02T09:24:24.325665" rpa="false" schemaversion="5">
+<suite id="s1" name="Env Check" source="C:\Users\rahul\Wipro2026\Python_Wipro\LabAssesments\Day 12\env_check.robot">
+<test id="s1-t1" name="Verify Environment Setup" line="7">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Checking Python installation...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.568113" elapsed="0.000382"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2026-02-02T09:24:24.569120" level="INFO">Starting process:
+python --version</msg>
+<msg time="2026-02-02T09:24:24.575451" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-02-02T09:24:24.582054" level="INFO">Process completed.</msg>
+<msg time="2026-02-02T09:24:24.582231" level="INFO">${py} = &lt;result object with rc 0&gt;</msg>
+<var>${py}</var>
+<arg>python</arg>
+<arg>--version</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.568825" elapsed="0.013436"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${py.rc} != 0</arg>
+<arg>Fail</arg>
+<arg>Python is not installed or not in PATH</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.582578" elapsed="0.000699"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python Version: ${py.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.583454" elapsed="0.000588"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Checking Robot Framework installation...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.584223" elapsed="0.000266"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T09:24:24.584879" level="INFO">${rf_ver} = 7.4.1</msg>
+<var>${rf_ver}</var>
+<arg>__import__('robot').__version__</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.584639" elapsed="0.000266"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${rf_ver}' == ''</arg>
+<arg>Fail</arg>
+<arg>Robot Framework is not installed</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.585097" elapsed="0.000311"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework Version: ${rf_ver}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.585616" elapsed="0.000321"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Checking SeleniumLibrary import...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.586116" elapsed="0.000261"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Import Library" owner="BuiltIn">
+<arg>SeleniumLibrary</arg>
+<doc>Imports a library with the given name and optional arguments.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.586939" elapsed="0.000891"/>
+</kw>
+<arg>Import Library</arg>
+<arg>SeleniumLibrary</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.586650" elapsed="0.001235"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SeleniumLibrary imported successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T09:24:24.588063" elapsed="0.000236"/>
+</kw>
+<status status="PASS" start="2026-02-02T09:24:24.567095" elapsed="0.021368"/>
+</test>
+<status status="PASS" start="2026-02-02T09:24:24.327223" elapsed="0.261774"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Env Check" id="s1" pass="1" fail="0" skip="0">Env Check</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
