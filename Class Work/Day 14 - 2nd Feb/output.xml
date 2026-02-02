@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.7 on win32)" generated="2026-02-02T10:25:48.259706" rpa="false" schemaversion="5">
+<suite id="s1" name="For" source="C:\Users\rahul\Wipro2026\Python_Wipro\Class Work\Day 14 - 2nd Feb\for.robot">
+<test id="s1-t1" name="Print Names using for loop" line="2">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T10:25:48.297045" elapsed="0.000373"/>
+</kw>
+<var name="${name}">Ram Ravi Taj</var>
+<status status="PASS" start="2026-02-02T10:25:48.296656" elapsed="0.000840"/>
+</iter>
+<var>${name}</var>
+<value>Ram Ravi Taj</value>
+<status status="PASS" start="2026-02-02T10:25:48.296483" elapsed="0.001056"/>
+</for>
+<status status="PASS" start="2026-02-02T10:25:48.296157" elapsed="0.001570"/>
+</test>
+<test id="s1-t2" name="Print Names using while loop" line="7">
+<kw name="=">
+<msg time="2026-02-02T10:25:48.298762" level="FAIL">No keyword with name '=' found.</msg>
+<var>${count}</var>
+<arg>Set</arg>
+<arg>Variable 1</arg>
+<status status="FAIL" start="2026-02-02T10:25:48.298730" elapsed="0.000075">No keyword with name '=' found.</status>
+</kw>
+<while condition="${count}&lt;=5">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-02T10:25:48.299092" elapsed="0.000017"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-02-02T10:25:48.299178" elapsed="0.000015"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T10:25:48.298953" elapsed="0.000266"/>
+</iter>
+<status status="NOT RUN" start="2026-02-02T10:25:48.298952" elapsed="0.000286"/>
+</while>
+<status status="FAIL" start="2026-02-02T10:25:48.298040" elapsed="0.001370">No keyword with name '=' found.</status>
+</test>
+<status status="FAIL" start="2026-02-02T10:25:48.261170" elapsed="0.038653"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="For" id="s1" pass="1" fail="1" skip="0">For</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
